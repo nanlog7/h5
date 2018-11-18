@@ -1,0 +1,48 @@
+<script>
+
+var max = 100;
+var min = 10;
+var points = 0;
+var Answer = [];
+
+
+
+for(var i = 0; i < 3; i++){
+
+    
+	var date1 = new Date();
+  var value1 = parseInt(Math.random() * (max - min) + min);
+  var value2 = parseInt(Math.random() * (max - min) + min);
+
+ 
+   var product = +prompt(`Напишите ваш ответ. Результат произведения двух чисел ${value1}*${value2}`); 
+   var date2 = new Date();
+   var diff = date2 - date1;
+   if(diff <= 20000){
+   
+  
+  if(value1*value2 === product){
+  
+  Answer.push([`${value1}*${value2} = ${value1*value2}. Ваш ответ правильный ${product}\n`]);
+  
+  points = ++points
+  }else{
+  
+  Answer.push([`${value1}*${value2} = ${value1*value2}. Ваш ответ неверный ${product}\n`]);
+  
+  }
+  }else{
+  alert(`Вы не уложились в отведенное время`);
+  Answer.push([`Ваш ответ не засчитан, вы не уложились в отведенное время.\n`]);
+  }
+
+  
+  }
+  
+ 
+  
+  alert(`Вы набрали ${points} баллов. Ваши результаты:\n ${Answer}`);
+ 
+ 
+
+</script>
